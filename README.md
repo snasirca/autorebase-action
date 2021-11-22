@@ -1,9 +1,9 @@
-# Auto-Rebase Action
+# Auto-Rebase Notify Action
 
 > A GitHub Action to automatically notify all PRs to rebase when their base 
 > branch receives a new push
 
-[![Build Status](https://github.com/snasirca/autorebase-action/workflows/Auto-Rebase/badge.svg)](https://github.com/snasirca/autorebase-action/actions)
+[![Build Status](https://github.com/snasirca/autorebase-notify-action/workflows/Auto-Rebase Notify/badge.svg)](https://github.com/snasirca/autorebase-notify-action/actions)
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ Create a workflow file under `.github/workflows` called `autorebase.yml` with
 the following content:
 
 ```yml
-name: Auto-Rebase
+name: Auto-Rebase Notify
 
 on:
   push:
@@ -26,21 +26,21 @@ jobs:
 
     steps:
       - name: Trigger rebase
-        uses: snasirca/autorebase-action@main
+        uses: snasirca/autorebase-notify-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 > NOTE: To ensure GitHub Actions is automatically re-run after a successful 
 > rebase action use a [Personal Access Token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) 
-> for `snasirca/autorebase-action@main`. See the following [discussion](https://github.community/t/triggering-a-new-workflow-from-another-workflow/16250/37) 
+> for `snasirca/autorebase-notify-action@main`. See the following [discussion](https://github.community/t/triggering-a-new-workflow-from-another-workflow/16250/37) 
 > for more details.
 
 ```yaml
 
 ...
       - name: Trigger rebase
-        uses: snasirca/autorebase-action@main
+        uses: snasirca/autorebase-notify-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 ```

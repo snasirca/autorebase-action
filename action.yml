@@ -1,4 +1,4 @@
-name: 'Auto-Rebase'
+name: 'Auto-Rebase Notify'
 author: 'Shahriyar Nasir'
 description: 'Automatically notify all PRs to rebase when their base branch receives a new push'
 branding:
